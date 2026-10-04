@@ -1,0 +1,545 @@
+/* --- Variables for Dark Luxury Aesthetic --- */
+:root {
+    --bg-color: #050505;
+    --surface-color: #111111;
+    --surface-hover: #1a1a1a;
+    --text-primary: #f8f8f8;
+    --text-secondary: #999999;
+    --accent: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.2);
+    --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em; /* Tight tracking for a premium minimal look */
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- Navigation --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(15px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--accent);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.menu a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.menu a:hover {
+    color: var(--accent);
+}
+
+.btn-outline {
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--text-primary);
+    color: var(--bg-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.15);
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 5% 50px 5%; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.05;
+    margin-bottom: 2.5rem;
+    font-weight: 800;
+}
+
+.text-accent {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0;
+    transition: var(--transition);
+}
+
+.text-accent:hover {
+    color: var(--accent);
+}
+
+.description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    font-weight: 400;
+}
+
+/* --- Text Hover Animation --- */
+.text-hover {
+    transition: all 0.3s ease;
+    display: inline-block; 
+}
+
+.text-hover:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    text-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+p.text-hover:hover {
+    color: var(--text-primary); 
+}
+
+/* --- Scroll Reveal Animations (Full Page Hovering Effect) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Work Section --- */
+.section-work {
+    padding: 8rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.work-card {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.work-img {
+    background-color: var(--surface-color);
+    height: 450px;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.placeholder-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+/* HOVER OVERLAY EFFECT */
+.hover-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.hover-overlay p {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.view-btn {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Apply Hover States */
+.work-card:hover .work-img {
+    border-color: var(--border-hover);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.work-card:hover .hover-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-card:hover .placeholder-text {
+    opacity: 0;
+}
+
+.work-meta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    transition: var(--transition);
+}
+
+.work-card:hover .work-meta h3 {
+    color: var(--accent);
+}
+
+.work-meta p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* --- About & Skills Section --- */
+.section-about {
+    padding: 8rem 0;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.about-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 3rem;
+}
+
+.subsection-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.skills-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Skill Hover Effect */
+.skills-list span {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1.6rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+    cursor: default;
+    font-weight: 500;
+}
+
+.skills-list span:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+}
+
+/* --- Resume Section --- */
+.section-resume {
+    padding: 8rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.resume-col h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+.resume-item {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.resume-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-school {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.resume-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-list {
+    list-style: none;
+}
+
+.cert-list li {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* General lift hover effect */
+.hover-lift:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    background: var(--surface-hover);
+}
+
+/* --- Contact Section --- */
+.section-contact {
+    padding: 10rem 0;
+    text-align: center;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.section-contact h2 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--text-primary);
+    color: var(--bg-color);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.hover-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Footer --- */
+footer {
+    padding: 3rem 0;
+    background-color: var(--bg-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.socials a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: var(--transition);
+}
+
+.hover-color:hover {
+    color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero { padding-top: 120px; }
+    .hero h1 { font-size: 3.2rem; }
+    .work-grid { grid-template-columns: 1fr; }
+    .work-img { height: 350px; }
+    .section-contact h2 { font-size: 2.8rem; }
+    .resume-grid { grid-template-columns: 1fr; }
+    .menu { display: none; }
+}
+
+
+/* --- Project Details Page Styles --- */
+.project-hero {
+    padding: 200px 5% 100px 5%;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.project-hero h1 {
+    font-size: 3.5rem;
+    margin-top: 1rem;
+}
+
+.project-content {
+    padding: 6rem 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-article h2 {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin: 3.5rem 0 1.5rem 0;
+}
+
+.project-article h2:first-child {
+    margin-top: 0;
+}
+
+.project-article h3 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem 0;
+    color: var(--text-primary);
+}
+
+.project-article p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.project-article ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.project-article li {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.project-article li strong {
+    color: var(--text-primary);
+}

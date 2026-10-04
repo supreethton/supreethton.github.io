@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Equipment Store | Supreeth V</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Clean, premium fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">SUPREETH V<span>.</span></a></div>
+            <div class="menu">
+                <a href="index.html#work">&larr; Back to Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <header class="project-hero reveal">
+        <div class="container">
+            <p class="subtitle text-hover">E-Commerce Website</p>
+            <h1 class="text-hover">Gym Equipment Store</h1>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <main class="project-content container reveal">
+        <article class="project-article">
+            <h2 class="text-hover">Project Overview</h2>
+            <p>The Gym Equipment Store E-commerce Web Application is a robust desktop-based platform tailored for fitness enthusiasts, gym owners, and health-conscious individuals. Recognizing the rapidly growing demand for health and wellness products and the rise of home workouts, this application bridges the gap between gym equipment sellers and customers by providing a fully functional, highly accessible online store.</p>
+            
+            <p>Overall, the application offers a comprehensive solution to digitalize gym equipment retail, enhance customer convenience, and streamline store management processes in the growing fitness industry.</p>
+        </article>
+    </main>
+
+    <footer class="reveal" style="margin-top: 5rem;">
+        <div class="container footer-content">
+            <p class="text-hover">&copy; 2026 Supreeth V. All Rights Reserved.</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/supreeth-v-49b070379" target="_blank" rel="noopener noreferrer" class="hover-color text-hover">LinkedIn</a>
+                <a href="https://github.com/supreethton" target="_blank" rel="noopener noreferrer" class="hover-color text-hover">GitHub</a>
+                <a href="index.html#work" class="hover-color text-hover" style="margin-left: 1.5rem;">Back to Projects</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reveal Script -->
+    <script>
+        function revealSections() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", revealSections);
+        revealSections();
+    </script>
+</body>
+</html>
